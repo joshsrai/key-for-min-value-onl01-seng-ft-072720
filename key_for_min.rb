@@ -11,20 +11,15 @@ def key_for_min_value(name_hash)
 end
 
 
-# passengers = {
-# suite_a: "Amanda Presley", 
-# suite_b: "Seymour Hoffman", 
-# suite_c: "Alfred Tennyson", 
-# suite_d: "Charlie Chaplin", 
-# suite_e: "Crumpet the Elf"
-# }
-
-def select_winner(passengers)
-  winner = ""
-  passengers.each {|suite, name|
-  if suite == :suite_a && name.start_with?("A")
-    winner = name
-  end
-  }
-  winner
+def key_for_min_value(name_hash)
+   return nil if name_hash.size == 0
+   #get the first key:value pair by using .first method
+   min_key, min_value = name_hash.first
+   name_hash.each do |key, value|
+      # iterate over each value to check which one smaller than the return value
+      if value < min_value
+      min_key = key #just need the key
+      end
+   end
+   min_key
 end
